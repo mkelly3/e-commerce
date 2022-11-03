@@ -6,11 +6,13 @@ router.get('/', async (req, res) => {
   // find all products 
   // find all includes the category and tag
   const productData = await Product.findAll({
-    include: {
-      model: Category,
-      model: Tag
-    }
-  })
+    include: ({
+      model: Category 
+     },
+      {model: Tag 
+     }
+     ) 
+   });
   return res.json(productData);
 });
 
@@ -29,8 +31,17 @@ router.get('/:id', async (req, res) => {
     return res.json(productData);
 });
 
-// create new product
-router.post('/', (req, res) => {
+// CREATE new product
+router.post('/', async (req, res) => {
+  
+  /* req.body should look like this...
+    }
+      product_name: "Basketball",
+      price: 200.00,
+      stock: 3,
+      tagIds: [1, 2, 3, 4]
+    }
+  */
   Product.create(req.body)
     .then((product) => {
       // if there's product tags, we need to create pairings to bulk create in the ProductTag model
@@ -53,8 +64,9 @@ router.post('/', (req, res) => {
     });
 });
 
+
 // update product
-router.put('/:id', (req, res) => {
+router.put('/:id', async (req, res) => {
   // update product data
   Product.update(req.body, {
     where: {
