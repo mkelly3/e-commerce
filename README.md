@@ -14,7 +14,7 @@ This project is a mysql databased and application backend for an e-commercesite.
 
 
 ## Walk Through Video 
-[Walk Through Video](https://drive.google.com/file/d/1OqqDVa7mHg9yIGeP4X6gWRA5FHOzQSf1/view)
+[Walk Through Video](https://drive.google.com/file/d/1ICyQfmMSTozrp7aB9YnOPaZhq976M4Oj/view)
 
 ## Code Snippet
 The code displayed is used to get the category data based on a specific id. The async await method is used to promisfy the route. Additionally, the specific category being found will also include the product that corresponds to the category id. 
