@@ -1,7 +1,7 @@
 # ORM E-commerce
 
 ## Description 
-This application uses the command line to have users input information about departments, roles and employees. The user is first prompted to either view the department, role or employee table, add an employee, department or role and finally the user can update information about the employees role or manager. Additionally, when the user views any othe options a table is displayed with the command line.
+This project is a mysql databased and application backend for an e-commercesite. Within the MySQL database ecommerce_db a table was created from the model folders Product, Category, Tag and ProductTag. The user is able to test all of the api routes, GET, POST, PUT and DELETE through insomnia. The application was devleoped using MYSQL2, Express, Sequelize and dotenv. 
   
 
 ## Table of Contents
@@ -17,6 +17,7 @@ This application uses the command line to have users input information about dep
 [Walk Through Video](https://drive.google.com/file/d/1OqqDVa7mHg9yIGeP4X6gWRA5FHOzQSf1/view)
 
 ## Code Snippet
+The code displayed is used to get the category data based on a specific id. The async await method is used to promisfy the route. Additionally, the specific category being found will also include the product that corresponds to the category id. 
 
 ```
 router.get('/:id', async (req, res) => {
